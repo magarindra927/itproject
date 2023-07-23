@@ -2,4 +2,31 @@
 {% block content %}
 
 
+<div class="container mt-5 mb-5">
+    <div class="row">
+        {% for food in foodData %}
+        <div class="col-md-12">
+            <h1><a href="">{{ food.name }}</a></h1>
+            <div class="row">
+                {% for var in food.variety_set.all %}
+                <div class="col-md-4">
+                    <div class="card">
+                        {% if var.photo %}
+                        <img class="card-img-top" src="{{ var.photo.url }}" alt="Card image cap">
+                        {% endif %}
+                        <div class="card-body">
+                          <h5 class="card-title">{{ var.title }}</h5>
+                          <p class="card-text">{{ var.content | safe }}</p>
+                          <a href="{% url 'variety' var.slug %}" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
 {% endblock %}

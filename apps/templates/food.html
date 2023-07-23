@@ -1,0 +1,33 @@
+{% extends 'layouts/main.html' %}
+{% block content %}
+
+
+<div class="container mt-5 mb-5">
+    <div class="row">        
+        <div class="col-md-12">
+            <h1><a href="">{{ fodData.name }}</a></h1>
+        </div>
+        <div class="row">
+            {% for fod in fodData.variety_set.all %}                
+            <div class="col-md-4">
+                <div class="card">
+                    {% if variety.photo %}
+                    <img class="card-img-top" src="{{ variety.photo.url }}" alt="Card image cap">
+                    {% endif %}
+                    <div class="card-body">
+                      <h5 class="card-title">{{ variety.title }}</h5>
+                      <p class="card-text">{{ variety.content | safe }}</p>
+                      <a href="{% url '}" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+            
+        </div>
+       
+    </div>
+</div>
+
+
+{% endblock %}

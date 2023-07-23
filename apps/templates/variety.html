@@ -1,0 +1,26 @@
+{% extends 'layouts/main.html' %}
+{% block content %}
+
+
+<div class="container mt-5 mb-5">
+    <div class="row">        
+        <div class="col-md-8">
+            <h1><a href="">{{ var.title }}</a></h1>   
+            {% if var.photo %}
+            <img class="card-img-top" src="{{ var.photo.url }}" alt="Card image cap">
+            {% endif %}                        
+            <p class="card-text">{{ var.content | safe }}</p>            
+        </div> 
+        <div class="col-md-4">
+            <h1>Related Items</h1>
+            <ul>
+                {% for ritems in related_items %}
+                <li><a href="{% url 'variety' ritems.slug %}">{{ ritems.title }}</a></li>
+                {% endfor %}           
+            </ul>
+        </div>          
+    </div>       
+</div>
+
+
+{% endblock %}
