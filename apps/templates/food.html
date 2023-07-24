@@ -11,13 +11,13 @@
             {% for fod in fodData.variety_set.all %}                
             <div class="col-md-4">
                 <div class="card">
-                    {% if variety.photo %}
-                    <img class="card-img-top" src="{{ variety.photo.url }}" alt="Card image cap">
+                    {% if fod.photo %}
+                    <img class="card-img-top" src="{{ fod.photo.url }}" alt="Card image cap">
                     {% endif %}
                     <div class="card-body">
-                      <h5 class="card-title">{{ variety.title }}</h5>
-                      <p class="card-text">{{ variety.content | safe }}</p>
-                      <a href="{% url '}" class="btn btn-primary">Go somewhere</a>
+                      <h5 class="card-title">{{ fod.title }}</h5>
+                      <p class="card-text">{{ fod.content | safe }}</p>
+                      <a href="{% url 'variety' fod.slug %}" class="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>
             </div>
