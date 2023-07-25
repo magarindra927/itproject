@@ -12,3 +12,9 @@ class FoodAdmin(admin.ModelAdmin):
 class VarietyAdmin(admin.ModelAdmin):
     list_display=['id','title','food','photo']
     prepopulated_fields={'slug':('title',)}
+
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+    list_display=['id','title','photo']
+    prepopulated_fields={'slug':('title',)}    
+

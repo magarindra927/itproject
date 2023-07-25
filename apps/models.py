@@ -13,3 +13,8 @@ class Variety(models.Model):
     photo=models.ImageField(upload_to='photo/%y/%m/%d', blank=True)
     content=RichTextField()
     
+class Category(models.Model):    
+    title=models.CharField(max_length=50)
+    slug=models.SlugField(max_length=50, unique=True)
+    photo=models.ImageField(upload_to='photo/%y/%m/%d', blank=True)
+    content=RichTextField()

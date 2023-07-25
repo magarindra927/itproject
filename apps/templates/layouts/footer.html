@@ -87,19 +87,15 @@
                 </div><!-- end widget -->
             </div><!-- end col -->
 
-            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">                
                 <div class="widget">
                     <h2 class="widget-title">Popular Categories</h2>
                     <div class="link-widget">
-                        <ul>
-                            <li><a href="#">Coffee</a></li>
-                            <li><a href="#">Alcoholic Drinks</a></li>
-                            <li><a href="#">Fruits</a></li>
-                            <li><a href="#">Vegetables</a></li>
-                            <li><a href="#">Soft Drinks</a></li>                            
-                        </ul>
+                        {% for caty in categoryData %}
+                        <a href="{% url 'category' caty.slug %}">{{ caty.title }}</a> 
+                        {% endfor %}
                     </div><!-- end link-widget -->
-                </div><!-- end widget -->
+                </div><!-- end widget -->                
             </div><!-- end col -->
         </div><!-- end row -->
 
@@ -143,6 +139,8 @@
 <div class="dmtop">Scroll to Top</div>
 
 </div><!-- end wrapper -->
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v17.0" nonce="bLFPYQ4c"></script>
 
 <!-- Core JavaScript
 ================================================== -->
